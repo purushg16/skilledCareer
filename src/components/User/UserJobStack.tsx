@@ -34,7 +34,7 @@ const UserJobStack = () => {
           </React.Fragment>
         ))}
       </SimpleGrid>
-      <Box w={{ base: "5%", md: "20%", lg: "25%" }} aspectRatio="1/1" />
+      <Box w={200} aspectRatio="1/1" />
     </InfiniteScroll>
   );
 };

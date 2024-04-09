@@ -27,7 +27,6 @@ const UserSingleJobPage = () => {
     >
       <Flex w="100%">
         <Link to="/" style={{ marginBottom: "16px" }}>
-          ``
           <Heading fontSize="xl"> SkilledCareer </Heading>
         </Link>
         <Spacer />
