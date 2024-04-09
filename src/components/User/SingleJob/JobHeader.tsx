@@ -1,4 +1,11 @@
-import { Button, Divider, HStack, Heading, VStack } from "@chakra-ui/react";
+import {
+  Button,
+  Divider,
+  Flex,
+  HStack,
+  Heading,
+  VStack,
+} from "@chakra-ui/react";
 import { Job } from "../../../entities/Job";
 import { ArchiveIcon, GlobeIcon, StarIcon } from "@radix-ui/react-icons";
 
@@ -58,7 +65,7 @@ const JobHeader = ({ job }: { job: Job | undefined }) => {
         </HStack>
       </VStack>
 
-      <HStack>
+      <Flex maxW="100%" flexWrap="wrap" gap={2}>
         <Button colorScheme="gray" size="xs" textTransform="capitalize">
           {job.industry}
         </Button>
@@ -68,7 +75,7 @@ const JobHeader = ({ job }: { job: Job | undefined }) => {
         <Button colorScheme="gray" size="xs" textTransform="capitalize">
           {job.employmentMode}
         </Button>
-      </HStack>
+      </Flex>
     </VStack>
   );
 };
