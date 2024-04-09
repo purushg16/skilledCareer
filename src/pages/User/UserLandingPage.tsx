@@ -35,7 +35,8 @@ const UserLandingPage = () => {
           <UserNavbar />
           <SimpleGrid
             columns={{ base: 1, md: 1, lg: 2 }}
-            spacing={16}
+            spacingX={16}
+            spacingY={4}
             alignItems="end"
           >
             <VStack align="start">
@@ -51,7 +52,7 @@ const UserLandingPage = () => {
             <Link to="/jobs">
               <Button
                 w="100%"
-                colorScheme={colorMode === "dark" ? "white" : "gray"}
+                colorScheme={colorMode === "dark" ? "green" : "gray"}
                 rightIcon={<ArrowRightIcon />}
                 justifyContent="space-between"
                 borderRadius={2}

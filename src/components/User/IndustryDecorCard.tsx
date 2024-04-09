@@ -11,7 +11,7 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
     <Card
       display="flex"
       flexDir="column"
-      minW={250}
+      minW={200}
       aspectRatio="1/1"
       align="end"
       justify="space-between"
@@ -26,7 +26,9 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
       <Heading fontSize="sm" w="max-content">
         *
       </Heading>
-      <Heading fontSize="sm"> {indutry.sector} </Heading>
+      <Heading fontSize="sm" textTransform="capitalize">
+        {indutry.sector}
+      </Heading>
     </Card>
   );
 };
