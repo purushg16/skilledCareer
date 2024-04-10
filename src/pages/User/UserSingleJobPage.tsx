@@ -6,7 +6,6 @@ import {
   Flex,
   Heading,
   Spacer,
-  Spinner,
   VStack,
 } from "@chakra-ui/react";
 import { ArrowLeftIcon } from "@radix-ui/react-icons";
@@ -17,13 +16,14 @@ import BasicInfoTile from "../../components/User/SingleJob/BasicInfoTile";
 import JobHeader from "../../components/User/SingleJob/JobHeader";
 import JobInfoTile from "../../components/User/SingleJob/JobInfoTile";
 import { useGetSingleJob } from "../../hooks/useGet";
+import LoadingPage from "../LoadingPage";
 
 const UserSingleJobPage = () => {
   const jobId = useParams().id;
 
   const { data, isLoading } = useGetSingleJob(jobId!, !!jobId);
 
-  if (isLoading) return <Spinner />;
+  if (isLoading) return <LoadingPage />;
   return (
     <Flex
       gap={8}
@@ -43,18 +43,21 @@ const UserSingleJobPage = () => {
         <Spacer />
         <ThemeSwitcher />
       </Flex>
-      <Button
-        w="max-content"
-        variant="text"
-        leftIcon={<ArrowLeftIcon />}
-        _hover={{
-          borderBottom: "1px solid",
-        }}
-        borderRadius={0}
-        p={0}
-      >
-        See all Jobs
-      </Button>
+      <Link to="/jobs">
+        <Button
+          w="max-content"
+          variant="text"
+          leftIcon={<ArrowLeftIcon />}
+          _hover={{
+            borderBottom: "1px solid",
+          }}
+          borderRadius={0}
+          p={0}
+        >
+          See all Jobs
+        </Button>
+      </Link>
+
       <Card>
         <CardBody p={8} as={VStack} align="start" gap={16}>
           <JobHeader job={data?.data} />

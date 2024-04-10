@@ -14,6 +14,7 @@ const FilterSection = () => {
       maxH={{ base: "max-content", md: "max-content", lg: 500 }}
       overflowY="auto"
       pb={20}
+      w="max-content"
     >
       <Heading fontSize="lg">Filter by</Heading>
 
