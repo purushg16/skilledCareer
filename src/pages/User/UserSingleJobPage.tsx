@@ -1,12 +1,22 @@
-import { Flex, Heading, Spacer, Spinner } from "@chakra-ui/react";
-import { useParams } from "react-router-dom";
-import JobApplyFooter from "../../components/User/JobApplyFooter";
-import { useGetSingleJob } from "../../hooks/useGet";
-import JobHeader from "../../components/User/SingleJob/JobHeader";
-import BasicInfoTile from "../../components/User/SingleJob/BasicInfoTile";
-import JobInfoTile from "../../components/User/SingleJob/JobInfoTile";
-import { Link } from "react-router-dom";
+import {
+  Button,
+  Card,
+  CardBody,
+  Divider,
+  Flex,
+  Heading,
+  Spacer,
+  Spinner,
+  VStack,
+} from "@chakra-ui/react";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { Link, useParams } from "react-router-dom";
 import ThemeSwitcher from "../../components/ThemeSwitcher";
+import JobApplyFooter from "../../components/User/JobApplyFooter";
+import BasicInfoTile from "../../components/User/SingleJob/BasicInfoTile";
+import JobHeader from "../../components/User/SingleJob/JobHeader";
+import JobInfoTile from "../../components/User/SingleJob/JobInfoTile";
+import { useGetSingleJob } from "../../hooks/useGet";
 
 const UserSingleJobPage = () => {
   const jobId = useParams().id;
@@ -24,6 +34,7 @@ const UserSingleJobPage = () => {
       pos="relative"
       h="100vh"
       overflowY="auto"
+      mb={8}
     >
       <Flex w="100%" align="baseline" py={4}>
         <Link to="/" style={{ marginBottom: "16px" }}>
@@ -32,10 +43,31 @@ const UserSingleJobPage = () => {
         <Spacer />
         <ThemeSwitcher />
       </Flex>
-      <JobHeader job={data?.data} />
-      <BasicInfoTile job={data?.data} />
-      <JobInfoTile job={data?.data} />
-      <JobApplyFooter link={data?.data.jobApplyLink} />
+      <Button
+        w="max-content"
+        variant="text"
+        leftIcon={<ArrowLeftIcon />}
+        _hover={{
+          borderBottom: "1px solid",
+        }}
+        borderRadius={0}
+        p={0}
+      >
+        See all Jobs
+      </Button>
+      <Card>
+        <CardBody p={8} as={VStack} align="start" gap={16}>
+          <JobHeader job={data?.data} />
+          <Divider />
+          <VStack gap={8} align="start" w="100%">
+            <BasicInfoTile job={data?.data} />
+            <Divider />
+            <JobInfoTile job={data?.data} />
+            <Divider />
+            <JobApplyFooter link={data?.data.jobApplyLink} />
+          </VStack>
+        </CardBody>
+      </Card>
     </Flex>
   );
 };

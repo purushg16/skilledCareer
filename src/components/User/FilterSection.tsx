@@ -8,10 +8,14 @@ import LocationFilter from "./Filter/LocationFilter";
 
 const FilterSection = () => {
   return (
-    <VStack align="start" gap={6} maxH={500} overflowY="auto">
-      <Heading fontSize="lg" mb={4}>
-        Filter by
-      </Heading>
+    <VStack
+      align="start"
+      gap={6}
+      maxH={{ base: "max-content", md: "max-content", lg: 500 }}
+      overflowY="auto"
+      pb={20}
+    >
+      <Heading fontSize="lg">Filter by</Heading>
 
       <MinSalarySelector />
       <IndustryModal />

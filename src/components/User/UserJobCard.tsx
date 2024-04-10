@@ -58,7 +58,7 @@ export const UserJobCard = ({ job }: { job: Job }) => {
                 {job.noOfViews} views
               </Button>
               <Spacer />
-              <Tag variant="solid" colorScheme="blue">
+              <Tag variant="solid" colorScheme="blue" size="sm">
                 <TagLeftIcon boxSize="12px" as={ClockIcon} />
                 <TagLabel> {DateFormatter(job.postedOn!)} </TagLabel>
               </Tag>

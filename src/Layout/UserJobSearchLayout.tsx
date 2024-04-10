@@ -39,7 +39,7 @@ const UserJobSearchLayout = () => {
         <JobHeader />
       </GridItem>
       <Show above="lg">
-        <GridItem p={4} area={"nav"} w="max-content">
+        <GridItem px={4} area={"nav"} w="max-content">
           <FilterSection />
         </GridItem>
       </Show>

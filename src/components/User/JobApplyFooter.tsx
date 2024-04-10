@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const JobApplyFooter = ({ link }: { link: string | undefined }) => {
   return (
-    <Flex w="100%" pb={8}>
+    <Flex w="100%">
       <Spacer />
       <HStack gap={4}>
         <Link to="/jobs">
