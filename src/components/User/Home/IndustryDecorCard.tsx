@@ -1,6 +1,6 @@
 import { Card, Heading } from "@chakra-ui/react";
-import { Industry } from "../../entities/industry";
-import useJobQueryStore from "../../store/jobQueryStore";
+import { Industry } from "../../../entities/industry";
+import useJobQueryStore from "../../../store/jobQueryStore";
 import { useNavigate } from "react-router-dom";
 
 const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
@@ -9,10 +9,12 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
 
   return (
     <Card
+      bg="blue.50"
+      color="black"
       display="flex"
       flexDir="column"
-      minW={200}
-      aspectRatio="1/1"
+      minW={100}
+      minH={150}
       align="end"
       justify="space-between"
       p={4}

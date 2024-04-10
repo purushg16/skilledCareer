@@ -29,6 +29,7 @@ const MinSalarySelector = () => {
         />
         <InputRightElement>
           <IconButton
+            colorScheme="blue"
             size="sm"
             borderRadius={0}
             icon={<CheckCircledIcon />}

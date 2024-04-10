@@ -10,7 +10,7 @@ const UserNavbar = () => {
   };
 
   return (
-    <Flex w="100%">
+    <Flex p={4} bg="blue.400" w="100%">
       <Heading fontSize="lg">SkilledCareer</Heading>
       <Spacer />
       <HStack gap={4}>

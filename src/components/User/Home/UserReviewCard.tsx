@@ -1,17 +1,17 @@
 import { Card, CardBody, CardHeader, Heading, Text } from "@chakra-ui/react";
-import Review from "../../entities/review";
-import RatingShower from "../Admin/Review/RatingShower";
+import Review from "../../../entities/review";
+import RatingShower from "../../Admin/Review/RatingShower";
 
 const UserReviewCard = ({ review }: { review: Review }) => {
   return (
-    <Card w={300} minW={300}>
+    <Card w="100%" minW={300} bg="white" color="black" borderRadius={3}>
       <CardHeader>
         <Heading size="md" textTransform="capitalize">
           {review.name}
         </Heading>
-        <Heading size="sm" textTransform="capitalize" color="gray">
+        <Text size="sm" textTransform="capitalize">
           {review.company}
-        </Heading>
+        </Text>
       </CardHeader>
       <CardBody>
         <RatingShower value={review.rating} />

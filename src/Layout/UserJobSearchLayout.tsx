@@ -3,6 +3,7 @@ import FilterSection from "../components/User/FilterSection";
 import JobHeader from "../components/User/JobHeader";
 import UserJobStack from "../components/User/UserJobStack";
 import ThemeSwitcher from "../components/ThemeSwitcher";
+import { Link } from "react-router-dom";
 
 const UserJobSearchLayout = () => {
   return (
@@ -27,7 +28,9 @@ const UserJobSearchLayout = () => {
     >
       <GridItem area={"navbar"} p={4}>
         <Flex w="100%">
-          <Heading fontSize="xl"> SkilledCareer </Heading>
+          <Link to="/">
+            <Heading fontSize="xl"> SkilledCareer </Heading>
+          </Link>
           <Spacer />
           <ThemeSwitcher />
         </Flex>

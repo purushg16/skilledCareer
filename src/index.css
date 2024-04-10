@@ -3,7 +3,6 @@
 }
 
 #scroll-container {
-  max-width: 1100px;
   height: 100vh;
   overflow-y: scroll; /* Enable vertical scrolling */
   scroll-snap-type: y mandatory; /* Enable mandatory vertical snapping */

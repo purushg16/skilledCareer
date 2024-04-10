@@ -5,12 +5,12 @@ import { AdminAddJobPage } from "./pages/Admin/AdminAddJobPage";
 import EditJobPage from "./pages/Admin/EditJobPage";
 import LoginPage from "./pages/Admin/LoginPage";
 import { LoginLayout } from "./Layout/LoginLayout";
-import UserLandingPage from "./pages/User/UserLandingPage";
 import UserJobSearchLayout from "./Layout/UserJobSearchLayout";
 import UserSingleJobPage from "./pages/User/UserSingleJobPage";
+import LandingPage from "./pages/User/LandingPage";
 
 const router = createBrowserRouter([
-  { path: "/", element: <UserLandingPage /> },
+  { path: "/", element: <LandingPage /> },
   { path: "/jobs", element: <UserJobSearchLayout /> },
   { path: "/job/:id", element: <UserSingleJobPage /> },
   {
