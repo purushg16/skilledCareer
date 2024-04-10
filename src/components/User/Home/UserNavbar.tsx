@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const UserNavbar = () => {
   const scrollToSwiper = () => {
-    const swiperElement = document.getElementById("swiper");
+    const swiperElement = document.getElementById("review-section");
     if (swiperElement) {
       swiperElement.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
-    <Flex p={4} bg="blue.400" w="100%">
+    <Flex p={4} bg="blue.50" w="100%">
       <Heading fontSize="lg">SkilledCareer</Heading>
       <Spacer />
       <HStack gap={4}>

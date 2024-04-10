@@ -1,7 +1,8 @@
-import { Card, Heading } from "@chakra-ui/react";
+import { Card, Heading, Icon } from "@chakra-ui/react";
 import { Industry } from "../../../entities/industry";
 import useJobQueryStore from "../../../store/jobQueryStore";
 import { useNavigate } from "react-router-dom";
+import { SketchLogoIcon } from "@radix-ui/react-icons";
 
 const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
   const setIndustries = useJobQueryStore((s) => s.setIndustry);
@@ -25,9 +26,7 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
         navigate("/jobs");
       }}
     >
-      <Heading fontSize="sm" w="max-content">
-        *
-      </Heading>
+      <Icon as={SketchLogoIcon} />
       <Heading fontSize="sm" textTransform="capitalize">
         {indutry.sector}
       </Heading>
