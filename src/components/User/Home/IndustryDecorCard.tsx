@@ -10,7 +10,7 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
 
   return (
     <Card
-      bg="blue.50"
+      bg="blue.200"
       color="black"
       display="flex"
       flexDir="column"

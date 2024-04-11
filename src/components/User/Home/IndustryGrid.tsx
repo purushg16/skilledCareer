@@ -1,4 +1,5 @@
 import {
+  Box,
   Button,
   Flex,
   Heading,
@@ -58,14 +59,22 @@ const IndustryGrid = () => {
         spacing={8}
         spacingY={12}
       >
-        <SimpleGrid w="100%" columns={{ base: 2, md: 3 }} spacing={4}>
-          {isSuccess &&
-            data?.data
-              .slice(0, 4)
-              .map((indutry) => (
-                <IndustryDecorCard key={indutry._id} indutry={indutry} />
+        <Box w="100%">
+          <SimpleGrid
+            w="100%"
+            columns={{ base: 2, md: 3 }}
+            row={2}
+            spacing={4}
+            h="100%"
+          >
+            {isSuccess &&
+              data?.data.slice(0, 4).map((indutry) => (
+                <>
+                  <IndustryDecorCard key={indutry._id} indutry={indutry} />
+                </>
               ))}
-        </SimpleGrid>
+          </SimpleGrid>
+        </Box>
         <WFHBanner />
       </SimpleGrid>
     </VStack>
