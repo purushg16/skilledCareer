@@ -1,8 +1,18 @@
 import { Heading, Text } from "@chakra-ui/react";
 
-const ResponsiveHeader = ({ text }: { text: string }) => {
+const ResponsiveHeader = ({
+  text,
+  color = "black",
+}: {
+  text: string;
+  color?: "white" | "black";
+}) => {
   return (
-    <Heading fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }} children={text} />
+    <Heading
+      fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+      color={color}
+      children={text}
+    />
   );
 };
 
