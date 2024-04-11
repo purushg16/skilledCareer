@@ -7,13 +7,31 @@ import {
   Input,
   VStack,
 } from "@chakra-ui/react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAdminLogin } from "../../hooks/useAuth";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const [username, setUsername] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const { mutate, isPending } = useAdminLogin();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (
+      !!localStorage.getItem("token") ||
+      localStorage.getItem("token") !== null ||
+      localStorage.getItem("token") !== ""
+    )
+      navigate("/admin");
+  }, [navigate]);
+
+  if (
+    !!localStorage.getItem("token") ||
+    localStorage.getItem("token") !== null ||
+    localStorage.getItem("token") !== ""
+  )
+    return <Navigate to="/admin" />;
 
   return (
     <Flex
@@ -40,6 +58,7 @@ const LoginPage = () => {
           <Input
             placeholder="Password"
             value={password}
+            type="password"
             onChange={(e) => setPassword(e.target.value)}
           />
         </FormControl>

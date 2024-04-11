@@ -35,7 +35,7 @@ const useAdminLogin = (callback?: () => void) => {
         title: error.message,
         duration: 2000,
         position: "top",
-        status: "success",
+        status: "error",
       }),
   });
 };

@@ -1,16 +1,26 @@
 import { Grid, GridItem } from "@chakra-ui/layout";
 import { AdminNavbar } from "../components/Admin/AdminNavbar";
-import { Outlet, useNavigate } from "react-router";
+import { Outlet, useNavigate, Navigate } from "react-router";
+import { useEffect } from "react";
 
 export const AdminLayout = () => {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (
+      !localStorage.getItem("token") ||
+      localStorage.getItem("token") === null ||
+      localStorage.getItem("token") === ""
+    )
+      navigate("/login");
+  }, [navigate]);
+
   if (
-    !localStorage.getItem("token") ||
-    localStorage.getItem("token") === null ||
-    localStorage.getItem("token") === ""
+    !!localStorage.getItem("token") ||
+    localStorage.getItem("token") !== null ||
+    localStorage.getItem("token") !== ""
   )
-    navigate("/login");
+    return <Navigate to="/login" />;
 
   return (
     <Grid
