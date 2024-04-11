@@ -14,8 +14,6 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
       color="black"
       display="flex"
       flexDir="column"
-      minW={100}
-      minH={150}
       align="end"
       justify="space-between"
       p={4}
@@ -27,7 +25,7 @@ const IndustryDecorCard = ({ indutry }: { indutry: Industry }) => {
       }}
     >
       <Icon as={SketchLogoIcon} />
-      <Heading fontSize="sm" textTransform="capitalize">
+      <Heading fontSize="sm" textTransform="capitalize" mt={8}>
         {indutry.sector}
       </Heading>
     </Card>

@@ -1,6 +1,6 @@
 import { Box, Button, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
-import img from "../../../assets/search.png";
+import img from "../../../assets/land.png";
 import { ResponsiveHeader } from "../ResponsiveTypography";
 import Taggie from "../Taggie";
 import { Link } from "react-router-dom";
@@ -44,13 +44,14 @@ const LanderGrid = () => {
       </VStack>
       <Box
         textAlign="right"
-        h="100%"
+        w="100%"
+        h="80%"
         bg="white"
         borderRadius={5}
         aspectRatio="1/1"
         bgImage={img}
         bgRepeat="no-repeat"
-        bgSize="contain"
+        bgSize="80%"
         bgPos="center"
         boxShadow="rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;"
       />

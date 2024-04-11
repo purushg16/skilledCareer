@@ -26,10 +26,30 @@ const UserJobStack = () => {
     >
       {isLoading && (
         <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} w="100%">
-          <Box w={500} maxW="100%" aspectRatio="16/9" as={Skeleton} />
-          <Box w={500} maxW="100%" aspectRatio="16/9" as={Skeleton} />
-          <Box w={500} maxW="100%" aspectRatio="16/9" as={Skeleton} />
-          <Box w={500} maxW="100%" aspectRatio="16/9" as={Skeleton} />
+          <Box
+            w={{ base: "100%", md: 500 }}
+            maxW="100%"
+            aspectRatio="16/9"
+            as={Skeleton}
+          />
+          <Box
+            w={{ base: "100%", md: 500 }}
+            maxW="100%"
+            aspectRatio="16/9"
+            as={Skeleton}
+          />
+          <Box
+            w={{ base: "100%", md: 500 }}
+            maxW="100%"
+            aspectRatio="16/9"
+            as={Skeleton}
+          />
+          <Box
+            w={{ base: "100%", md: 500 }}
+            maxW="100%"
+            aspectRatio="16/9"
+            as={Skeleton}
+          />
         </SimpleGrid>
       )}
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4} w="100%">

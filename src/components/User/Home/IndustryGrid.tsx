@@ -8,11 +8,12 @@ import {
   Text,
   VStack,
 } from "@chakra-ui/react";
-import { useGetIndustries } from "../../../hooks/useGet";
-import IndustryDecorCard from "./IndustryDecorCard";
-import Taggie from "../Taggie";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Link } from "react-router-dom";
+import { useGetIndustries } from "../../../hooks/useGet";
+import Taggie from "../Taggie";
+import IndustryDecorCard from "./IndustryDecorCard";
+import WFHBanner from "./WFHBanner";
 
 const IndustryGrid = () => {
   const { data, isLoading, isSuccess } = useGetIndustries();
@@ -23,7 +24,10 @@ const IndustryGrid = () => {
         <VStack align="start" gap={2}>
           <Taggie text="Build the future with us!" icon color="blue" />
           <Heading> Browse from top categories </Heading>
-          <Text>Discover your favourite jobs from here!</Text>
+          <Text>
+            Discover a myriad of enticing job opportunities right at your
+            fingertips!
+          </Text>
         </VStack>
         <Spacer />
         <Link to="/jobs">
@@ -47,13 +51,22 @@ const IndustryGrid = () => {
         </Link>
       </Flex>
       {isLoading && <Spinner />}
-      <SimpleGrid w="100%" columns={{ base: 2, md: 4 }} spacing={4} mt={8}>
-        {isSuccess &&
-          data?.data
-            .slice(0, 3)
-            .map((indutry) => (
-              <IndustryDecorCard key={indutry._id} indutry={indutry} />
-            ))}
+      <SimpleGrid
+        w="100%"
+        columns={{ base: 1, md: 2 }}
+        mt={8}
+        spacing={8}
+        spacingY={12}
+      >
+        <SimpleGrid w="100%" columns={{ base: 2, md: 3 }} spacing={4}>
+          {isSuccess &&
+            data?.data
+              .slice(0, 4)
+              .map((indutry) => (
+                <IndustryDecorCard key={indutry._id} indutry={indutry} />
+              ))}
+        </SimpleGrid>
+        <WFHBanner />
       </SimpleGrid>
     </VStack>
   );
