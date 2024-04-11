@@ -1,5 +1,6 @@
 import {
   Button,
+  Heading,
   Image,
   Show,
   SimpleGrid,
@@ -8,7 +9,6 @@ import {
 } from "@chakra-ui/react";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import img from "../../../assets/land.png";
-import { ResponsiveHeader } from "../ResponsiveTypography";
 import Taggie from "../Taggie";
 import { Link } from "react-router-dom";
 
@@ -26,8 +26,9 @@ const LanderGrid = () => {
       </Show>
       <VStack gap={2} align="start">
         <Taggie text="Let's get it done!" color="white" icon />
-        <ResponsiveHeader
-          text="Search for jobs and grow career on our site!"
+        <Heading
+          fontSize={{ base: "4xl", md: "5xl", lg: "6xl" }}
+          children="Search for jobs and grow career on our site!"
           color="white"
         />
         <Text fontSize="sm" color="white">
